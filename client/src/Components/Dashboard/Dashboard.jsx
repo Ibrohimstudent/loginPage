@@ -3,8 +3,11 @@ import React from 'react'
 const Dashboard = () => {
   return (
     <div>
-      This is Dashboard Page
-      <a href="/">Log Out</a>
+      <div className="dashboard flex">
+        <div className="dashboardContainer flex">
+          
+        </div>
+      </div>
     </div>
   )
 }
