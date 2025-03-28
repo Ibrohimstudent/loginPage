@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Register.css"
 import "../../App.css"
-import { Link } from 'react-router-dom'
+import { Link,Link } from 'react-router-dom'
 // import our Assets
 import video from "../../LoginAssets/2909914-uhd_3840_2024_24fps.mp4"
 import logo from "../../LoginAssets/erasebg-transformed.png"
@@ -12,6 +12,18 @@ import {BsFillShieldLockFill} from "react-icons/bs"
 import {AiOutlineSwapRight} from "react-icons/ai"
 import {MdMarkEmailRead} from "react-icons/md"
 const Register = () => {
+
+  // UseState to hold our inputs
+  const [email,setEmail] = useState('')
+  const [userName,setUserName] = useState('')
+  const [password,setPassword] = useState('')
+
+  //Onclick let us get what the user has entered
+
+  const createUser = ()=>{
+    //We shall require Axios to create an API that connects  to the server - 
+    // Lets install that
+  }
   return (
     <div className='registerPage flex'>
       <div className="container flex">
@@ -41,21 +53,30 @@ const Register = () => {
             <label htmlFor="email">Email</label>
             <div className="input flex">
               <MdMarkEmailRead className="icon"/>
-              <input type="email" id='email' placeholder='Enter Email' />
+              <input type="email" id='email' placeholder='Enter Email'
+              onChange={(e)=>{
+                setEmail(e.target.value)
+              }} />
             </div>
           </div>
           <div className="inputDiv">
                       <label htmlFor="username">Username</label>
                       <div className="input flex">
                         <FaUserShield className="icon"/>
-                        <input type="text" id='username' placeholder='Enter Username' />
+                        <input type="text" id='username' placeholder='Enter Username'
+                         onChange={(e)=>{
+                          setUserName(e.target.value)
+                        }} />
                       </div>
           </div>
            <div className="inputDiv">
             <label htmlFor="password">Password</label>
             <div className="input flex">
               <BsFillShieldLockFill className="icon"/>
-              <input type="password" id='password' placeholder='Enter Password' />
+              <input type="password" id='password' placeholder='Enter Password'
+               onChange={(e)=>{
+                setPassword(e.target.value)
+              }} />
             </div>
           </div>
           <button type='submit' className='btn flex'>
